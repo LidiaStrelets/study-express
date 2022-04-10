@@ -3,8 +3,8 @@ import Post from "./Post.js";
 
 class Servise {
   async create(post, picture) {
-      const fileName = await fileServise.saveFile(picture)
-    const createdPost = await Post.create({...post, pic: fileName});
+    const fileName = await fileServise.saveFile(picture);
+    const createdPost = await Post.create({ ...post, pic: fileName });
     return createdPost;
   }
 
@@ -31,7 +31,7 @@ class Servise {
   }
 
   async deletePost(id) {
-      console.log('id:', id);
+    console.log("id:", id);
     if (!id) {
       const error = new Error("No id provided");
       error.statusCode = 400;
